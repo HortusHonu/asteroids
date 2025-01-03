@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+from player import Player
 from constants import *
 
 def main():
@@ -10,6 +11,7 @@ def main():
     clock = pygame.time.Clock()
     running = True
     dt = 0
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -21,6 +23,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill(("black"), rect=None, special_flags=0)
+        player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 
