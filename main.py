@@ -22,9 +22,13 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+
+        player.update(dt)
         screen.fill(("black"), rect=None, special_flags=0)
         player.draw(screen)
         pygame.display.flip()
+
+        # linit the frame rate to 60 FPS (thanks boots)
         dt = clock.tick(60) / 1000
 
 if __name__ == "__main__":
