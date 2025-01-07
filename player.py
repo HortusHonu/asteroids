@@ -6,8 +6,6 @@ from constants import PLAYER_SPEED
 
 class Player(CircleShape):
     def __init__(self, x, y):
-        self.x = y
-        self.y = y
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
 
