@@ -28,7 +28,7 @@ def main():
 
     print("Starting asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
-    print(f"Screen heighth: {SCREEN_HEIGHT}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
 
 
     while running:
@@ -47,7 +47,7 @@ def main():
         for shot in shots:
             for asteroid in asteroids:
                 if asteroid.collision(shot):
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
 
         screen.fill(("black"), rect=None, special_flags=0)
